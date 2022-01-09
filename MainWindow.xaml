@@ -1,0 +1,23 @@
+﻿<Window x:Class="ProjectCyclistsWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectCyclistsWPF"
+        mc:Ignorable="d"
+        Title="The Cycling club" Height="800" Width="700" WindowStartupLocation="CenterScreen" Background="#035C7A">
+    <Border Background="#182636" CornerRadius="20"    Margin="50">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+                <Label Name="WelcomeLabel" Content="Welcome PlaceHolder" Initialized="WelcomeLabel_Initialized" Background="#325172" Foreground="Black" FontSize="25"/>
+                <Button Name="btnCalendar" Click="btnCalendarLogin_Click_1" Content="Calendar" Background="#325172" Foreground="Black"   FontSize="25" Margin="0,20,0,20"/>
+                <Button Name="btnCars"  Click="btnCars_Click" Content="Cars" Background="#325172" Foreground="Black"   FontSize="25" Margin="0,20,0,20"/>
+                <Button Name="btnCategories" Click="btnCategories_Click" Content="Categories" Background="#325172" Foreground="Black"   FontSize="25" Margin="0,20,0,20"/>
+                <Button Name="btnPayment" Click="btnPayment_Click" Content="Payments" Background="#325172" Foreground="Black"   FontSize="25" Margin="0,20,0,20"/>
+                <Button Name="btnAccountSettings" Click="btnAccountSettings_Click" Content="Account Settings" Background="#325172" Foreground="DarkGray" FontSize="25" Margin="0,20,0,20" />
+                <Button Name="btnUnlog" Click="btnUnlog_Click"  Content="Unlog" Background="#325172" Foreground="Tomato" FontSize="25"  Margin="0,20,0,20"/>
+                <Image Height="125" Width="368" Source="/Sans titre 3.png" Stretch="Uniform" HorizontalAlignment="Center" />
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+</Window>

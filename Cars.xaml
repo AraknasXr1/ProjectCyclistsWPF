@@ -1,0 +1,39 @@
+﻿<Window x:Class="ProjectCyclistsWPF.Cars"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectCyclistsWPF"
+        mc:Ignorable="d"
+        Title="The Cycling club - Cars" Height="800" Width="700" WindowStartupLocation="CenterScreen" Background="#035C7A" Margin="0,20,0,0">
+    <Border Background="#182636" CornerRadius="20"    Margin="50">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Button Name="MainMenu" Click="MainMenu_Click" FontSize="25" Margin="0,20,0,0" Content="Return" Background="#325172" Foreground="White"/>
+                <DataGrid Name="CarGrid" AutoGenerateColumns="False" CanUserAddRows="False" Background="DarkBlue" HorizontalAlignment="Center" VerticalAlignment="Stretch" FontSize="20" Margin="0,10,0,0" FontStyle="Normal" FontStretch="Normal" >
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Binding="{Binding IdCar}" Header="Car ID" Width="100" IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding IdCarClient}" Header="IdCarClient" Width="100" IsReadOnly="True" Visibility="Hidden"/>
+                        <DataGridTextColumn Binding="{Binding CarBrand}" Header="Car Brand" Width="100" />
+                        <DataGridTextColumn Binding="{Binding CarSeat}" Header="Seats av." Width="100" />
+                        <DataGridTextColumn Binding="{Binding CarBike}" Header="Bikes av." Width="100" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label FontSize="20" Foreground="White" HorizontalAlignment="Center">Car Brand</Label>
+                <TextBox FontSize="20" Name="CarBrand" Background="#FF3F4E76" Margin="100,0,100,0"/>
+                <Label FontSize="20" Foreground="White" HorizontalAlignment="Center">Car Seats available</Label>
+                <TextBox FontSize="20" Name="CarSeat" Background="#FF3F4E76" Margin="100,0,100,0"/>
+                <Label FontSize="20" Foreground="White" HorizontalAlignment="Center">Car Bike Space</Label>
+                <TextBox FontSize="20" Name="CarBikeSpace" Background="#FF3F4E76" Margin="100,0,100,0"/>
+                <Button Content="Add a Car" Name="AddCar" Click="AddCar_Click" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0" Background="#FF090F29" Foreground="#FFCFD90B"/>
+                <Label FontSize="20" Foreground="White" HorizontalAlignment="Center">Car Id you want to update</Label>
+                <TextBox FontSize="20" Name="CarIdUpdateNumber" Background="#FF3F4E76" Margin="100,0,100,0"/>
+                <Button Content="Update Car Info" Name="UpdateCar" Click="UpdateCar_Click" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0" Background="#FF070529" Foreground="#FF0B8A12"/>
+                
+                <Label FontSize="20" Foreground="White" HorizontalAlignment="Center">Car Id you want to Delete</Label>
+                <TextBox FontSize="20" Name="DeleteCarNumber" Background="#FF3F4E76" Margin="100,0,100,0"/>
+                <Button Content="Delete Car" Name="DeleteCar" Click="DeleteCar_Click" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0" Background="#FF121441" Foreground="#FFB2480C"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+</Window>

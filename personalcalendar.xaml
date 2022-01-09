@@ -1,0 +1,53 @@
+﻿<Window x:Class="ProjectCyclistsWPF.personalcalendar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectCyclistsWPF"
+        mc:Ignorable="d"
+        Title="The Cycling club - Calendar" Height="800" Width="700" WindowStartupLocation="CenterScreen" Background="#035C7A">
+    <Border Background="#182636" CornerRadius="20"    Margin="50">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+                <Button Name="MainMenu" Click="MainMenu_Click"  FontSize="25" Margin="0,20,0,20" Content="Return" Background="#325172" Foreground="White"/>
+                <DataGrid Name="Ride" AutoGenerateColumns="False" CanUserAddRows="False" Background="DarkBlue" IsReadOnly="False" HorizontalAlignment="Center" VerticalAlignment="Stretch" FontSize="10" Margin="0,10,0,0" FontStyle="Normal" FontStretch="Normal" >
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Binding="{Binding IdRide}" Header="Ride ID" Width="50"/>
+                        <DataGridTextColumn Binding="{Binding DeparturePlace}" Header="Departure Place" Width="100"/>
+                        <DataGridTextColumn Binding="{Binding DepartureDate}" Header="Departure Date" Width="100" />
+                        <DataGridTextColumn Binding="{Binding DepartureHour}" Header="Departure Hour" Width="100" />
+                        <DataGridTextColumn Binding="{Binding RidePrice}" Header="Ride Price" Width="70" />
+                        <DataGridTextColumn Binding="{Binding CatName}" Header="Ride Cat" Width="70"  />
+                        <DataGridTextColumn Binding="{Binding MaxClient}" Header="Spots available"  />
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+
+                <Label FontSize="15" Foreground="White" HorizontalAlignment="Center">Ride ID you want to Delete</Label>
+                <TextBox FontSize="15" Name="DeleteRideNumber" Background="#FF3F4E76" Margin="100,0,100,0"/>
+                <Button Content="Delete Ride" Name="DeleteRide" Click="DeleteRide_Click" HorizontalAlignment="Center" FontSize="15" Margin="0,10,0,10" Background="#FF121441" Foreground="#FFB2480C"/>
+                <Separator></Separator>
+                <Label FontSize="10" Foreground="White" HorizontalAlignment="Center">Your Cars Available</Label>
+               
+                <DataGrid Name="CarGrid" AutoGenerateColumns="False" CanUserAddRows="False" Background="DarkBlue" HorizontalAlignment="Center" VerticalAlignment="Stretch" FontSize="10" Margin="0,10,0,0" FontStyle="Normal" FontStretch="Normal" >
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Binding="{Binding IdCar}" Header="Car ID"  IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding IdCarClient}" Header="IdCarClient" Width="100" IsReadOnly="True" Visibility="Hidden"/>
+                        <DataGridTextColumn Binding="{Binding CarBrand}" Header="Car Brand"  />
+                        <DataGridTextColumn Binding="{Binding CarSeat}" Header="Seats av."  />
+                        <DataGridTextColumn Binding="{Binding CarBike}" Header="Bikes av."  />
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+                <Label FontSize="15" Foreground="White" HorizontalAlignment="Center">Id Car you want to Use</Label>
+                <TextBox FontSize="15" Name="AddCar" Background="#FF3F4E76" Margin="100,0,100,0"/>
+                
+                <Label FontSize="15" Foreground="White" HorizontalAlignment="Center">Ride ID you want to Use</Label>
+                <TextBox FontSize="15" Name="Addid" Background="#FF3F4E76" Margin="100,0,100,0"/>
+                <Button Content="Add Car to Ride" Name="AddCarBtn" Click="AddCarBtn_Click" HorizontalAlignment="Center" FontSize="15" Margin="0,10,0,10" Background="#FF121441" Foreground="#FF0CB234"/>
+
+                <Separator></Separator>
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+</Window>
